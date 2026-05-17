@@ -4,13 +4,16 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Newspaper, Video, Users, BookOpen, Handshake, Star } from "lucide-react";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { newsData } from "@/lib/news"; // <-- Importamos las noticias aquí también
 
 export default function Home() {
   const heroImg = PlaceHolderImages.find(img => img.id === 'hero-robot');
-  const newsImg = PlaceHolderImages.find(img => img.id === 'news-1');
   const videoImg = PlaceHolderImages.find(img => img.id === 'video-1');
   const teamImg = PlaceHolderImages.find(img => img.id === 'team-history');
   const courseImg = PlaceHolderImages.find(img => img.id === 'course-1');
+
+  // Tomamos solo las primeras 3 noticias de nuestra lista real
+  const topNews = newsData.slice(0, 3);
 
   return (
     <div className="flex flex-col w-full overflow-hidden">
@@ -57,18 +60,26 @@ export default function Home() {
             </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3].map((i) => (
-              <Card key={i} className="bg-white/5 border-white/10 overflow-hidden group hover:border-accent/50 transition-all">
+            {/* Ahora mapeamos las noticias reales en vez de un array estático */}
+            {topNews.map((news) => (
+              <Card key={news.id} className="bg-white/5 border-white/10 overflow-hidden group hover:border-accent/50 transition-all">
                 <div className="relative h-48">
-                  <Image src={newsImg?.imageUrl || ""} alt="News" fill className="object-cover group-hover:scale-105 transition-transform" />
+                  <Image 
+                    src={news.image || "https://picsum.photos/seed/placeholder/600/400"} 
+                    alt={news.title} 
+                    fill 
+                    className="object-cover group-hover:scale-105 transition-transform" 
+                  />
                 </div>
                 <CardContent className="p-6">
-                  <div className="text-accent text-xs font-bold mb-2 uppercase tracking-wider">Competencia</div>
-                  <h3 className="text-xl font-bold mb-3 text-white">Gran Victoria en el Nacional 2024</h3>
+                  <div className="text-accent text-xs font-bold mb-2 uppercase tracking-wider">{news.category}</div>
+                  <h3 className="text-xl font-bold mb-3 text-white line-clamp-2">{news.title}</h3>
                   <p className="text-white/60 text-sm line-clamp-2 mb-4">
-                    Nuestro equipo demostró una coordinación excepcional y un diseño técnico superior en la última competencia regional.
+                    {news.content}
                   </p>
-                  <Button variant="link" className="text-accent p-0 hover:text-white">Leer más</Button>
+                  <Link href="/noticias">
+                    <Button variant="link" className="text-accent p-0 hover:text-white">Leer más</Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
@@ -136,7 +147,7 @@ export default function Home() {
                 </Link>
                 <Link href="/team-r2d2#competidores" className="group p-4 bg-white/5 rounded-lg hover:bg-accent/10 transition-colors border border-white/10">
                   <h4 className="font-bold text-accent mb-1">Competidores</h4>
-                  <p className="text-xs text-white/50">Nuestros rivales en pista.</p>
+                  <p className="text-xs text-white/50">Nuestros representantes.</p>
                 </Link>
                 <Link href="/team-r2d2#guias" className="group p-4 bg-white/5 rounded-lg hover:bg-accent/10 transition-colors border border-white/10">
                   <h4 className="font-bold text-accent mb-1">Guías Oficiales</h4>
@@ -182,7 +193,6 @@ export default function Home() {
                 </div>
               </CardContent>
             </Card>
-            {/* Repeat or link to full page */}
             <div className="md:col-span-2 lg:col-span-1 flex items-center justify-center p-8 bg-muted rounded-xl border-2 border-dashed border-border">
               <Link href="/material-educativo" className="flex flex-col items-center gap-4 text-center group">
                 <div className="bg-primary p-4 rounded-full text-white group-hover:scale-110 transition-transform">
@@ -194,9 +204,9 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+      
       {/* Partners & Sponsors Section */}
-      <section id="socios" className="py-24 bg-muted border-y border-border">
+      <section id="socios-&-sponsors" className="py-24 bg-muted border-y border-border">
         <div className="container mx-auto px-4 max-w-[1200px]">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold mb-4 flex justify-center items-center gap-3 text-primary">
@@ -205,7 +215,7 @@ export default function Home() {
             <p className="text-muted-foreground">Las organizaciones que hacen posible nuestro éxito.</p>
           </div>
           
-          <div id="sponsors" className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 opacity-70">
+          <div id="socios-&-sponsors" className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 opacity-70">
             {[1, 2, 3, 4, 5, 6].map((i) => (
               <div key={i} className="flex items-center justify-center bg-white p-6 rounded-xl shadow-sm hover:opacity-100 transition-opacity">
                 <div className="text-primary font-bold flex items-center gap-2">
