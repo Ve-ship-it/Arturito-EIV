@@ -1,0 +1,47 @@
+
+{
+  "placeholderImages": [
+    {
+      "id": "hero-robot",
+      "description": "Robotics team working on a high-tech robot",
+      "imageUrl": "https://picsum.photos/seed/r2d2-1/1200/600",
+      "imageHint": "robotics competition"
+    },
+    {
+      "id": "news-1",
+      "description": "Competition winning moment",
+      "imageUrl": "https://picsum.photos/seed/r2d2-news-1/600/400",
+      "imageHint": "robot victory"
+    },
+    {
+      "id": "news-2",
+      "description": "New hardware update",
+      "imageUrl": "https://picsum.photos/seed/r2d2-news-2/600/400",
+      "imageHint": "electronic circuit"
+    },
+    {
+      "id": "video-1",
+      "description": "Robot test run video thumbnail",
+      "imageUrl": "https://picsum.photos/seed/r2d2-vid-1/600/400",
+      "imageHint": "robot testing"
+    },
+    {
+      "id": "team-history",
+      "description": "Historical team photo",
+      "imageUrl": "https://picsum.photos/seed/r2d2-team/800/500",
+      "imageHint": "engineering team"
+    },
+    {
+      "id": "sponsor-1",
+      "description": "Tech company logo placeholder",
+      "imageUrl": "https://picsum.photos/seed/r2d2-sp-1/200/100",
+      "imageHint": "tech logo"
+    },
+    {
+      "id": "course-1",
+      "description": "Arduino programming course",
+      "imageUrl": "https://picsum.photos/seed/r2d2-course-1/600/400",
+      "imageHint": "arduino coding"
+    }
+  ]
+}
