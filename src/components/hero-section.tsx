@@ -13,7 +13,6 @@ import {
   AlertTriangle,
   ArrowRight,
 } from "lucide-react";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 // ─── Modal base ───────────────────────────────────────────────────────────────
 function Modal({ onClose, children }: { onClose: () => void; children: React.ReactNode }) {
@@ -60,7 +59,6 @@ function DonateModal({ onClose }: { onClose: () => void }) {
   return (
     <Modal onClose={onClose}>
       <div className="p-8">
-        {/* Advertencia datos ejemplo */}
         <div className="flex items-center gap-2 bg-accent/20 border border-accent/40 rounded-lg px-4 py-3 mb-6">
           <AlertTriangle size={16} className="text-accent shrink-0" />
           <p className="text-accent text-xs font-semibold">
@@ -175,7 +173,6 @@ function SocialModal({ onClose }: { onClose: () => void }) {
 // ─── Componente exportado ─────────────────────────────────────────────────────
 export function HeroSection() {
   const [modal, setModal] = useState<"donate" | "social" | null>(null);
-  const heroImg = PlaceHolderImages.find((img) => img.id === "hero-robot");
 
   return (
     <>
@@ -184,12 +181,11 @@ export function HeroSection() {
 
       <section className="relative h-screen min-h-[600px] flex items-center justify-center text-white">
         <Image
-          src={heroImg?.imageUrl || ""}
+          src="/images/hero-robot.png"
           alt="R2D2 Hero"
           fill
           className="object-cover brightness-[0.3]"
           priority
-          data-ai-hint="robotics competition"
         />
         <div className="relative z-10 container mx-auto px-4 text-center max-w-[1200px]">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 text-accent uppercase">
