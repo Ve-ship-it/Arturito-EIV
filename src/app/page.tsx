@@ -206,7 +206,7 @@ export default function Home() {
       </section>
 
       {/* Partners & Sponsors Section */}
-      <section id="socios-&-sponsors" className="py-24 bg-muted border-y border-border">
+      <section id="socios-sponsors" className="py-24 bg-muted border-y border-border">
         <div className="container mx-auto px-4 max-w-[1200px]">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold mb-4 flex justify-center items-center gap-3 text-primary">
@@ -215,7 +215,7 @@ export default function Home() {
             <p className="text-muted-foreground">Las organizaciones que hacen posible nuestro éxito.</p>
           </div>
           
-          <div id="socios-&-sponsors" className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 opacity-70">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 opacity-70">
             {[1, 2, 3, 4, 5, 6].map((i) => (
               <div key={i} className="flex items-center justify-center bg-white p-6 rounded-xl shadow-sm hover:opacity-100 transition-opacity">
                 <div className="text-primary font-bold flex items-center gap-2">
