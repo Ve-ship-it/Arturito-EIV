@@ -12,9 +12,29 @@ const navItems = [
   { name: "Videos", href: "/videos" },
   { name: "Team R2D2", href: "/team-r2d2" },
   { name: "Material Educativo", href: "/material-educativo" },
-  { name: "Socios", href: "/#socios" },
-  { name: "Sponsors", href: "/#sponsors" },
+  { name: "Socios & Sponsors", href: "/#socios-sponsors" },
 ];
+
+function handleAnchorClick(
+  e: React.MouseEvent<HTMLAnchorElement>,
+  href: string,
+  callback?: () => void
+) {
+  if (href.includes("#")) {
+    e.preventDefault();
+    const id = href.split("#")[1];
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // Si no está en la página actual, navega normalmente (carga la home y baja)
+      window.location.href = href;
+    }
+    callback?.();
+  } else {
+    callback?.();
+  }
+}
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,14 +57,17 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4 max-w-[1200px]">
         <div className="flex items-center justify-between">
+          {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
             <div className="bg-accent p-2 rounded-full transform group-hover:rotate-12 transition-transform shadow-md">
               <Bot className="w-6 h-6 text-primary" />
             </div>
-            <span className={cn(
-              "text-xl font-bold tracking-tight",
-              scrolled ? "text-white" : "text-primary"
-            )}>
+            <span
+              className={cn(
+                "text-xl font-bold tracking-tight",
+                scrolled ? "text-white" : "text-primary"
+              )}
+            >
               ROBÓTICA R2D2 EIV
             </span>
           </Link>
@@ -59,6 +82,7 @@ export function Navbar() {
                   "text-sm font-medium transition-colors hover:text-accent",
                   scrolled ? "text-white/90" : "text-primary"
                 )}
+                onClick={(e) => handleAnchorClick(e, item.href)}
               >
                 {item.name}
               </Link>
@@ -85,7 +109,7 @@ export function Navbar() {
               key={item.name}
               href={item.href}
               className="text-white text-lg font-medium py-2 px-4 hover:bg-white/10 rounded-md"
-              onClick={() => setIsOpen(false)}
+              onClick={(e) => handleAnchorClick(e, item.href, () => setIsOpen(false))}
             >
               {item.name}
             </Link>
