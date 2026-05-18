@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Newspaper, Video, Users, BookOpen, Handshake, Star } from "lucide-react";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { newsData } from "@/app/lib/news"; // <-- Importamos las noticias aquí también
+import newsData from "@/app/lib/news"; // <-- Importación corregida (sin llaves {}) para export default
 
 export default function Home() {
   const heroImg = PlaceHolderImages.find(img => img.id === 'hero-robot');
@@ -12,8 +12,8 @@ export default function Home() {
   const teamImg = PlaceHolderImages.find(img => img.id === 'team-history');
   const courseImg = PlaceHolderImages.find(img => img.id === 'course-1');
 
-  // Tomamos solo las primeras 3 noticias de nuestra lista real
-  const topNews = newsData.slice(0, 3);
+  // Salvavidas: si newsData llega indefinido, usa [] para que .slice() no rompa la compilación
+  const topNews = (newsData || []).slice(0, 3);
 
   return (
     <div className="flex flex-col w-full overflow-hidden">
