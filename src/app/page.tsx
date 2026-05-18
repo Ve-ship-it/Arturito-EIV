@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Newspaper, Video, Users, BookOpen, Handshake, Star } from "lucide-react";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { newsData } from "@/lib/news"; // <-- Importamos las noticias aquí también
+import newsData from "@/lib/news"; // <-- Importamos las noticias aquí también
 
 export default function Home() {
   const heroImg = PlaceHolderImages.find(img => img.id === 'hero-robot');
@@ -204,7 +204,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
+
       {/* Partners & Sponsors Section */}
       <section id="socios-&-sponsors" className="py-24 bg-muted border-y border-border">
         <div className="container mx-auto px-4 max-w-[1200px]">
