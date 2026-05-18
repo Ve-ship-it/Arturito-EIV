@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Newspaper, Calendar, Clock, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import newsData from "../lib/news"; // <-- Aquí importamos los datos compartidos
+import { newsData } from "@/app/lib/news"; // <-- Aquí importamos los datos compartidos
 
 export default async function NewsPage() {
   // Resúmenes temporales sin IA
