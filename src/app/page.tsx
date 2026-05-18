@@ -18,10 +18,10 @@ export default function Home() {
       setTimeout(() => {
         const el = document.getElementById(id);
         if (el) el.scrollIntoView({ behavior: "smooth" });
-      }, 100);
+      }, 500);
     }
   }, []);
-  
+
   const heroImg = PlaceHolderImages.find(img => img.id === 'hero-robot');
   const videoImg = PlaceHolderImages.find(img => img.id === 'video-1');
   const teamImg = PlaceHolderImages.find(img => img.id === 'team-history');
