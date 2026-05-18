@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Newspaper, Video, Users, BookOpen, Handshake, Star } from "lucide-react";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import newsData from "@/app/lib/news"; // <-- Importación corregida (sin llaves {}) para export default
+import { newsData } from "@/app/lib/news"; // <-- Importación corregida (sin llaves {}) para export default
 
 export default function Home() {
   const heroImg = PlaceHolderImages.find(img => img.id === 'hero-robot');
