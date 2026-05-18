@@ -1,3 +1,6 @@
+"use client";  // ← primero esto, arriba de todo
+
+import { useEffect } from "react";  // ← agregar useEffect a los imports de react
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -7,6 +10,18 @@ import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { newsData } from "@/app/lib/news"; // <-- Importación corregida (sin llaves {}) para export default
 
 export default function Home() {
+  // ← AQUÍ, lo primero dentro del componente, antes de cualquier const
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const id = hash.replace("#", "");
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+  }, []);
+  
   const heroImg = PlaceHolderImages.find(img => img.id === 'hero-robot');
   const videoImg = PlaceHolderImages.find(img => img.id === 'video-1');
   const teamImg = PlaceHolderImages.find(img => img.id === 'team-history');
