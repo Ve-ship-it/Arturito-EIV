@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Bot, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -15,30 +16,10 @@ const navItems = [
   { name: "Socios & Sponsors", href: "/#socios-sponsors" },
 ];
 
-function handleAnchorClick(
-  e: React.MouseEvent<HTMLAnchorElement>,
-  href: string,
-  callback?: () => void
-) {
-  if (href.includes("#")) {
-    e.preventDefault();
-    const id = href.split("#")[1];
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    } else {
-      // Si no está en la página actual, navega normalmente (carga la home y baja)
-      window.location.href = href;
-    }
-    callback?.();
-  } else {
-    callback?.();
-  }
-}
-
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,6 +28,32 @@ export function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  function handleAnchorClick(
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+    callback?: () => void
+  ) {
+    if (href.includes("#")) {
+      e.preventDefault();
+      const id = href.split("#")[1];
+      const el = document.getElementById(id);
+
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      } else {
+        router.push("/");
+        setTimeout(() => {
+          const target = document.getElementById(id);
+          if (target) target.scrollIntoView({ behavior: "smooth" });
+        }, 800);
+      }
+
+      callback?.();
+    } else {
+      callback?.();
+    }
+  }
 
   return (
     <nav
@@ -65,7 +72,7 @@ export function Navbar() {
             <span
               className={cn(
                 "text-xl font-bold tracking-tight",
-                scrolled ? "text-white" : "text-primary"
+                scrolled ? "text-white" : "text-accent"
               )}
             >
               ROBÓTICA R2D2 EIV
@@ -80,7 +87,7 @@ export function Navbar() {
                 href={item.href}
                 className={cn(
                   "text-sm font-medium transition-colors hover:text-accent",
-                  scrolled ? "text-white/90" : "text-primary"
+                  scrolled ? "text-white/90" : "text-accent"
                 )}
                 onClick={(e) => handleAnchorClick(e, item.href)}
               >
@@ -93,7 +100,7 @@ export function Navbar() {
           <Button
             variant="ghost"
             size="icon"
-            className={cn("md:hidden", scrolled ? "text-white" : "text-primary")}
+            className={cn("md:hidden", scrolled ? "text-white" : "text-accent")}
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X /> : <Menu />}
