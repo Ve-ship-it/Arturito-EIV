@@ -14,42 +14,82 @@ import {
 
 const teamImg = PlaceHolderImages.find(img => img.id === 'team-history');
 
-// 2. Definimos la estructura y los datos de los 7 competidores
+// 2. Definimos la estructura y los datos de los 15 competidores
 const COMPETITORS = [
   {
-    name: 'Joaquin Torres',
-    role: 'Constructor',
-    desc: 'Especialista en diseño mecánico y manufactura CNC para robótica de combate.'
+    name: 'Gabriel Ignacio Córdova Pasten',
+    role: 'Competidor',
+    desc: 'Encargado de investigación y exposición de proyecto innovador.'
   },
   {
-    name: 'Carla Opazo',
-    role: 'Programadora',
-    desc: 'Desarrolladora de sistemas embebidos, visión artificial y autonomía de drones.'
+    name: 'Bernardita María Tapia Luna',
+    role: 'Competidor',
+    desc: 'Encargada de investigación y exposición de proyecto innovador.'
   },
   {
-    name: 'Alan Vega',
+    name: 'Christofer Rafael Guzmán Tapia',
+    role: 'Competidor',
+    desc: 'Lanzador y constructor de robot.'
+  },
+  {
+    name: 'Matías Alonzo Letelier Turedo',
+    role: 'Estudiante',
+    desc: 'Constructor y modelador 3D de estructuras. Aporta su conocimiento y experiencia al equipo.'
+  },
+  {
+    name: 'Maikol Enrique Salaverria Salas',
+    role: 'Competidor',
+    desc: 'Constructor, programador y lanzador de robot.'
+  },
+  {
+    name: 'Joaquín Humberto Torres Torres',
+    role: 'Competidor',
+    desc: 'Comunicador, presentador de cultura y redactor de guiones.'
+  },
+  {
+    name: 'Javier Ignacio Bustos Bustos',
+    role: 'Competidor',
+    desc: 'Lanzador y constructor de robot.'
+  },
+  {
+    name: 'Martín Esteban Arancibia Bernal',
+    role: 'Competidor',
+    desc: 'Lanzador y constructor de robot.'
+  },
+  {
+    name: 'Jesús Alfredo Galeas Vidal',
     role: 'Mentor',
-    desc: 'Ex-competidor internacional encargado de guiar las estrategias de diseño electrónico.'
+    desc: 'Investigador, diseñador y creador de prototipos electrónicos para proyectos científicos.'
   },
   {
-    name: 'Sofía Méndez',
+    name: 'Constanza Daniela Ortiz Jeria',
+    role: 'Mentor',
+    desc: 'Traductora, diseñadora creativa y encargada de presentaciones del equipo.'
+  },
+  {
+    name: 'Fernando Nicolás Aguilera Contreras',
+    role: 'Mentor',
+    desc: 'Encargado de redes sociales, traductor y realizador audiovisual del equipo.'
+  },
+  {
+    name: 'Alan Marcelo Vega Castro',
+    role: 'Mentor',
+    desc: 'Responsable de la planificación y estrategia del robot.'
+  },
+  {
+    name: 'Carla Edith Opazo Oliva',
     role: 'Coach',
-    desc: 'Líder de equipo enfocada en la gestión de proyectos, logística y dinámicas de grupo.'
+    desc: 'Gestora de logística y planificadora del equipo.'
   },
   {
-    name: 'Lucas Silva',
-    role: 'Diseñador CAD',
-    desc: 'Encargado del modelado 3D interactivo y simulaciones de estrés de materiales.'
+    name: 'Christian Leonardo Aguilera Rivera',
+    role: 'Coach',
+    desc: 'Coordinador de actividades y organización del equipo.'
   },
   {
-    name: 'Elena Rostova',
-    role: 'Especialista en Control',
-    desc: 'Optimizadora de algoritmos PID y telemetría en tiempo real para prototipos.'
-  },
-  {
-    name: 'Mateo Díaz',
-    role: 'Programador Backend',
-    desc: 'Desarrollador de la infraestructura de software y comunicación entre bases de datos.'
+    name: 'Amanda Baradit',
+    role: 'Comunicaciones',
+    desc: 'Encargada de redes sociales, difusión institucional, grabación y edición de contenido audiovisual.'
   }
 ];
 
