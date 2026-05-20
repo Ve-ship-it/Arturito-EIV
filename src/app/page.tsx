@@ -291,22 +291,22 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 opacity-70">
-              {[1, 2, 3, 4, 5, 6].map((i) => (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 opacity-70">
+              {[1, 2, 3].map((i) => (
                 <div
                   key={i}
-                  className="flex items-center justify-center bg-white p-6 rounded-xl shadow-sm hover:opacity-100 transition-opacity min-h-[120px]"
+                  className="flex items-center justify-center bg-white p-8 rounded-xl shadow-sm hover:opacity-100 transition-opacity min-h-[240px]"
                 >
                   {i === 1 ? (
                     <Image
                       src="/images/logo_gob_reg_val.png"
                       alt="Gobierno Regional de Valparaíso"
-                      width={140}
-                      height={80}
-                      className="object-contain"
+                      width={420}
+                      height={240}
+                      className="object-contain max-w-full max-h-full"
                     />
                   ) : (
-                    <div className="text-muted-foreground font-semibold">
+                    <div className="text-muted-foreground font-semibold text-lg">
                       Próximamente
                     </div>
                   )}
