@@ -59,13 +59,6 @@ function DonateModal({ onClose }: { onClose: () => void }) {
   return (
     <Modal onClose={onClose}>
       <div className="p-8">
-        <div className="flex items-center gap-2 bg-accent/20 border border-accent/40 rounded-lg px-4 py-3 mb-6">
-          <AlertTriangle size={16} className="text-accent shrink-0" />
-          <p className="text-accent text-xs font-semibold">
-            DATOS DE EJEMPLO — Serán reemplazados por los datos reales próximamente.
-          </p>
-        </div>
-
         <h2 className="text-white text-2xl font-bold mb-2">Apoya al Equipo R2D2</h2>
         <p className="text-white/60 text-sm mb-6">
           Tu aporte nos permite costear inscripciones, materiales y traslados para competir
