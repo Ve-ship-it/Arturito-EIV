@@ -46,7 +46,7 @@ RUT: 13654234-6
 Banco prepago Tenpo
 Tipo de cuenta: Cuenta Vista
 Número de cuenta: 111113654234
-Correo: carla_opazoolivia@yahoo.es`;
+Correo: carla_opazooliva@yahoo.es`;
 
   function handleCopy(value: string, label: string) {
     navigator.clipboard.writeText(value);
