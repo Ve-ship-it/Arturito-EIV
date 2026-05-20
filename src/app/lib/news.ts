@@ -1,4 +1,14 @@
-export const newsData = [
+export interface NewsItem {
+  id: number;
+  title: string;
+  content: string;
+  date: string;
+  category: string;
+  image: string;
+  url: string;
+}
+
+export const newsData: NewsItem[] = [
   {
     id: 1,
     title: "Gobernador de Valparaíso visita al equipo de Robótica R2D2 EIV",
@@ -7,6 +17,7 @@ export const newsData = [
     date: "18 Mar 2026",
     category: "Competencia",
     image: "https://www.eiv.cl/wp-content/uploads/2026/03/Foto-Visita-Gobernador-3-4-2026.webp",
+    url: "https://www.eiv.cl/gobernador-de-valparaiso-visita-al-equipo-de-robotica-r2d2-eiv/",
   },
   {
     id: 2,
@@ -16,6 +27,7 @@ export const newsData = [
     date: "15 Dic 2025",
     category: "Competencia",
     image: "https://www.eiv.cl/wp-content/uploads/2025/12/Portada-Bicampeones-Nacionales-2025.webp",
+    url: "https://www.eiv.cl/bicampeones-nacionales-r2d2-eiv-destaca-en-la-first-lego-league-2025/",
   },
   {
     id: 3,
@@ -25,6 +37,7 @@ export const newsData = [
     date: "19 Nov 2025",
     category: "Competencia",
     image: "https://www.eiv.cl/wp-content/uploads/2025/11/Portada-Campeonato-Regional-2025.webp",
+    url: "https://www.eiv.cl/r2d2-eiv-clasifica-a-la-final-nacional-de-la-first-lego-league-2025/",
   },
   {
     id: 4,
@@ -34,5 +47,6 @@ export const newsData = [
     date: "09 Dic 2024",
     category: "Competencia",
     image: "https://www.eiv.cl/wp-content/uploads/2024/12/WhatsApp-Image-2024-12-07-at-8.40.12-PM-1024x768.jpeg",
+    url: "https://www.eiv.cl/campeones-nacionales-el-equipo-r2d2-eiv-clasifica-a-la-first-championship-en-houston/",
   },
 ];
