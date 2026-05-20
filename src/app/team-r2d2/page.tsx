@@ -120,6 +120,7 @@ export default function TeamPage() {
                 fill
                 className="object-cover"
               />
+            </div>
             <div>
               <div className="inline-flex items-center gap-2 bg-accent/10 text-primary px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4">
                 <Target size={14} /> Misión y Visión
