@@ -114,8 +114,12 @@ export default function TeamPage() {
         <div className="container mx-auto px-4 max-w-[1200px]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-              <Image src={teamImg?.imageUrl || ""} alt="About R2D2" fill className="object-cover" />
-            </div>
+              <Image
+                src="/images/team-1.jpg"
+                alt="Equipo R2D2"
+                fill
+                className="object-cover"
+              />
             <div>
               <div className="inline-flex items-center gap-2 bg-accent/10 text-primary px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4">
                 <Target size={14} /> Misión y Visión
@@ -134,8 +138,8 @@ export default function TeamPage() {
                     <p className="text-xs">Premios Nacionales</p>
                   </div>
                   <div className="p-4 bg-muted rounded-xl">
-                    <h4 className="font-bold text-primary text-lg mb-1">15</h4>
-                    <p className="text-xs">Prototipos Activos</p>
+                    <h4 className="font-bold text-primary text-lg mb-1">2</h4>
+                    <p className="text-xs">Premios Internacionales</p>
                   </div>
                 </div>
               </div>
