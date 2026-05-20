@@ -5,10 +5,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, Newspaper, Video, Users, BookOpen, Handshake, Star, Play, Eye, X } from "lucide-react";
+import { ArrowRight, Newspaper, Video, Users, BookOpen, Handshake, Star, Play, X } from "lucide-react";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { newsData } from "@/app/lib/news";
-import { videoData, getYoutubeThumbnail, getYoutubeEmbedUrl, type VideoItem } from "@/app/lib/videos";
+import { videoData, getYoutubeEmbedUrl, getTimeAgo, type VideoItem } from "@/app/lib/videos";
 import { HeroSection } from "@/components/hero-section";
 
 // ─── Video Modal ──────────────────────────────────────────────────────────────
@@ -43,11 +43,8 @@ function VideoModal({ video, onClose }: { video: VideoItem; onClose: () => void 
           </span>
           <h2 className="text-white text-xl font-bold mt-1 mb-2">{video.title}</h2>
           <p className="text-white/60 text-sm">{video.description}</p>
-          <div className="flex items-center gap-4 mt-4 text-white/40 text-xs">
-            <span className="flex items-center gap-1">
-              <Eye size={12} /> {video.views} visualizaciones
-            </span>
-            <span>{video.timeAgo}</span>
+          <div className="mt-4 text-white/40 text-xs">
+            {getTimeAgo(video.uploadedAt)}
           </div>
         </div>
       </div>
@@ -78,7 +75,6 @@ export default function Home() {
 
       <div className="flex flex-col w-full overflow-hidden">
 
-        {/* Hero Section — componente externo */}
         <HeroSection />
 
         {/* News Preview Section */}
@@ -145,23 +141,26 @@ export default function Home() {
 
             {featuredVideo ? (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div
-                  className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl group cursor-pointer"
-                  onClick={() => setSelectedVideo(featuredVideo)}
-                >
-                  <Image
-                    src={getYoutubeThumbnail(featuredVideo.id)}
-                    alt={featuredVideo.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    unoptimized
+                {/* iframe sin autoplay — muestra miniatura nativa de YouTube */}
+                <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl group cursor-pointer">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${featuredVideo.id}?rel=0&modestbranding=1`}
+                    title={featuredVideo.title}
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full pointer-events-none"
+                    loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-primary/30 group-hover:bg-primary/50 transition-colors flex items-center justify-center">
+                  {/* Overlay clicable */}
+                  <div
+                    className="absolute inset-0 bg-primary/10 group-hover:bg-primary/40 transition-colors flex items-center justify-center"
+                    onClick={() => setSelectedVideo(featuredVideo)}
+                  >
                     <div className="bg-accent/90 text-primary p-5 rounded-full scale-90 group-hover:scale-100 transition-transform shadow-lg">
                       <Play fill="currentColor" size={32} />
                     </div>
                   </div>
-                  <div className="absolute top-4 left-4 bg-accent text-primary text-[10px] font-bold uppercase px-3 py-1 rounded-full">
+                  <div className="absolute top-4 left-4 bg-accent text-primary text-[10px] font-bold uppercase px-3 py-1 rounded-full pointer-events-none">
                     {featuredVideo.category}
                   </div>
                 </div>
@@ -177,11 +176,8 @@ export default function Home() {
                     <p className="text-muted-foreground text-sm mb-4">
                       {featuredVideo.description}
                     </p>
-                    <div className="flex items-center gap-4 text-xs text-muted-foreground mb-5">
-                      <span className="flex items-center gap-1">
-                        <Eye size={12} /> {featuredVideo.views} visualizaciones
-                      </span>
-                      <span>{featuredVideo.timeAgo}</span>
+                    <div className="text-xs text-muted-foreground mb-5">
+                      {getTimeAgo(featuredVideo.uploadedAt)}
                     </div>
                     <Button
                       onClick={() => setSelectedVideo(featuredVideo)}

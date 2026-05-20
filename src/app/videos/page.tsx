@@ -1,29 +1,19 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import Image from "next/image";
-import { Video, Play, Search, X, Eye } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Video, Play, Search, X } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   videoData,
   videoCategories,
-  getYoutubeThumbnail,
   getYoutubeEmbedUrl,
+  getTimeAgo,
   type VideoItem,
 } from "@/app/lib/videos";
 
 // ─── Modal ────────────────────────────────────────────────────────────────────
-
-function VideoModal({
-  video,
-  onClose,
-}: {
-  video: VideoItem;
-  onClose: () => void;
-}) {
-  // Cerrar con ESC
+function VideoModal({ video, onClose }: { video: VideoItem; onClose: () => void }) {
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -32,12 +22,9 @@ function VideoModal({
     return () => window.removeEventListener("keydown", handler);
   }, [onClose]);
 
-  // Bloquear scroll del body mientras el modal está abierto
   useEffect(() => {
     document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = "";
-    };
+    return () => { document.body.style.overflow = ""; };
   }, []);
 
   return (
@@ -49,7 +36,6 @@ function VideoModal({
         className="relative w-full max-w-4xl bg-primary rounded-2xl overflow-hidden shadow-2xl animate-in zoom-in-95 duration-200"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Botón cerrar */}
         <button
           onClick={onClose}
           className="absolute top-4 right-4 z-10 bg-black/50 hover:bg-accent text-white hover:text-primary transition-colors rounded-full p-2"
@@ -58,7 +44,6 @@ function VideoModal({
           <X size={20} />
         </button>
 
-        {/* iframe YouTube */}
         <div className="aspect-video w-full">
           <iframe
             src={getYoutubeEmbedUrl(video.id)}
@@ -69,7 +54,6 @@ function VideoModal({
           />
         </div>
 
-        {/* Info del video */}
         <div className="p-6">
           <span className="text-accent text-[10px] font-bold uppercase tracking-widest">
             {video.category}
@@ -78,11 +62,8 @@ function VideoModal({
             {video.title}
           </h2>
           <p className="text-white/60 text-sm">{video.description}</p>
-          <div className="flex items-center gap-4 mt-4 text-white/40 text-xs">
-            <span className="flex items-center gap-1">
-              <Eye size={12} /> {video.views} visualizaciones
-            </span>
-            <span>{video.timeAgo}</span>
+          <div className="mt-4 text-white/40 text-xs">
+            {getTimeAgo(video.uploadedAt)}
           </div>
         </div>
       </div>
@@ -91,40 +72,22 @@ function VideoModal({
 }
 
 // ─── Card de video ────────────────────────────────────────────────────────────
-
-function VideoCard({
-  video,
-  onClick,
-}: {
-  video: VideoItem;
-  onClick: () => void;
-}) {
-  const [imgError, setImgError] = useState(false);
-
-  // YouTube a veces no tiene maxresdefault; fallback a hqdefault
-  const thumbnailUrl = imgError
-    ? `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`
-    : getYoutubeThumbnail(video.id);
-
+function VideoCard({ video, onClick }: { video: VideoItem; onClick: () => void }) {
   return (
-    <Card
-      onClick={onClick}
-      className="overflow-hidden group border-none shadow-md hover:shadow-xl transition-all cursor-pointer"
-    >
-      {/* Thumbnail */}
-      <div className="relative aspect-video bg-primary/10">
-        <Image
-          src={thumbnailUrl}
-          alt={video.title}
-          fill
-          className="object-cover group-hover:scale-105 transition-transform duration-500"
-          onError={() => setImgError(true)}
-          unoptimized // necesario para dominios externos sin configurar en next.config
+    <Card className="overflow-hidden group border-none shadow-md hover:shadow-xl transition-all cursor-pointer">
+      {/* iframe sin autoplay — muestra el primer frame/miniatura nativa de YouTube */}
+      <div className="relative aspect-video bg-primary/10" onClick={onClick}>
+        <iframe
+          src={`https://www.youtube.com/embed/${video.id}?rel=0&modestbranding=1`}
+          title={video.title}
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          className="w-full h-full pointer-events-none"
+          loading="lazy"
         />
-
-        {/* Overlay con botón Play */}
-        <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/50 transition-colors duration-300 flex items-center justify-center">
-          <div className="bg-accent/90 text-primary p-4 rounded-full scale-75 group-hover:scale-100 transition-transform duration-300 shadow-lg">
+        {/* Overlay clicable encima del iframe para abrir el modal */}
+        <div className="absolute inset-0 bg-primary/10 group-hover:bg-primary/40 transition-colors duration-300 flex items-center justify-center">
+          <div className="bg-accent/90 text-primary p-4 rounded-full scale-75 group-hover:scale-100 transition-transform duration-300 shadow-lg opacity-0 group-hover:opacity-100">
             <Play fill="currentColor" size={24} />
           </div>
         </div>
@@ -137,11 +100,8 @@ function VideoCard({
         <h3 className="text-base font-bold text-primary mb-3 leading-tight line-clamp-2">
           {video.title}
         </h3>
-        <div className="flex items-center justify-between text-xs text-muted-foreground">
-          <span className="flex items-center gap-1">
-            <Eye size={11} /> {video.views} visualizaciones
-          </span>
-          <span>{video.timeAgo}</span>
+        <div className="text-xs text-muted-foreground">
+          {getTimeAgo(video.uploadedAt)}
         </div>
       </CardContent>
     </Card>
@@ -149,15 +109,13 @@ function VideoCard({
 }
 
 // ─── Página principal ─────────────────────────────────────────────────────────
-
 export default function VideosPage() {
   const [activeCategory, setActiveCategory] = useState<string>("Todos");
   const [search, setSearch] = useState("");
   const [selectedVideo, setSelectedVideo] = useState<VideoItem | null>(null);
 
-  const filtered = videoData.filter((v) => {
-    const matchCategory =
-      activeCategory === "Todos" || v.category === activeCategory;
+  const filtered = (videoData || []).filter((v) => {
+    const matchCategory = activeCategory === "Todos" || v.category === activeCategory;
     const matchSearch = v.title.toLowerCase().includes(search.toLowerCase());
     return matchCategory && matchSearch;
   });
@@ -166,13 +124,9 @@ export default function VideosPage() {
 
   return (
     <>
-      {/* Modal de reproducción */}
-      {selectedVideo && (
-        <VideoModal video={selectedVideo} onClose={closeModal} />
-      )}
+      {selectedVideo && <VideoModal video={selectedVideo} onClose={closeModal} />}
 
       <div className="pt-24 pb-20">
-        {/* Hero */}
         <section className="bg-primary text-white py-20 mb-12">
           <div className="container mx-auto px-4 max-w-[1200px]">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 flex items-center gap-4">
@@ -186,7 +140,6 @@ export default function VideosPage() {
         </section>
 
         <div className="container mx-auto px-4 max-w-[1200px]">
-          {/* Búsqueda */}
           <div className="flex flex-col md:flex-row gap-4 mb-8">
             <div className="relative flex-1">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground w-5 h-5" />
@@ -199,7 +152,6 @@ export default function VideosPage() {
             </div>
           </div>
 
-          {/* Filtros por categoría */}
           <div className="flex flex-wrap gap-2 mb-12">
             {videoCategories.map((cat) => (
               <button
@@ -216,7 +168,6 @@ export default function VideosPage() {
             ))}
           </div>
 
-          {/* Grid de videos */}
           {filtered.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filtered.map((vid) => (
