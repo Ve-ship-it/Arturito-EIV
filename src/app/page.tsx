@@ -198,8 +198,13 @@ export default function Home() {
         <section className="py-24 bg-primary text-white">
           <div className="container mx-auto px-4 max-w-[1200px]">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl">
-                <Image src={teamImg?.imageUrl || ""} alt="Team R2D2" fill className="object-cover" />
+              <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+                <Image
+                  src="/images/team-1.JPG"
+                  alt="Equipo R2D2"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <div>
                 <h2 className="text-4xl font-bold mb-6 flex items-center gap-3">
