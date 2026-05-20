@@ -41,9 +41,9 @@ function Modal({ onClose, children }: { onClose: () => void; children: React.Rea
 function DonateModal({ onClose }: { onClose: () => void }) {
   const [copied, setCopied] = useState<string | null>(null);
 
-  const bankData = `Nombre: Carla Edith Opazo Olivia
+  const bankData = `Nombre: CARLA EDITH OPAZO OLIVIA
 RUT: 13654234-6
-Banco: Prepago Tempo
+Banco prepago Tenpo
 Tipo de cuenta: Cuenta Vista
 Número de cuenta: 111113654234
 Correo: carla_opazoolivia@yahoo.es`;
