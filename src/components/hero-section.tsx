@@ -41,14 +41,12 @@ function Modal({ onClose, children }: { onClose: () => void; children: React.Rea
 function DonateModal({ onClose }: { onClose: () => void }) {
   const [copied, setCopied] = useState<string | null>(null);
 
-  const bankData = [
-    { label: "Banco", value: "Prepago Tempo" },
-    { label: "Tipo de cuenta", value: "Cuenta Vista" },
-    { label: "Número de cuenta", value: "111113654234" },
-    { label: "Nombre titular", value: "Carla Edith Opazo Olivia" },
-    { label: "RUT titular", value: "13654234-6" },
-    { label: "Correo", value: "carla_opazoolivia@yahoo.es" },
-  ];
+  const bankData = `Nombre: Carla Edith Opazo Olivia
+RUT: 13654234-6
+Banco: Prepago Tempo
+Tipo de cuenta: Cuenta Vista
+Número de cuenta: 111113654234
+Correo: carla_opazoolivia@yahoo.es`;
 
   function handleCopy(value: string, label: string) {
     navigator.clipboard.writeText(value);
@@ -59,42 +57,45 @@ function DonateModal({ onClose }: { onClose: () => void }) {
   return (
     <Modal onClose={onClose}>
       <div className="p-8">
-        <h2 className="text-white text-2xl font-bold mb-2">Apoya al Equipo R2D2</h2>
+        <h2 className="text-white text-2xl font-bold mb-2">
+          Apoya al Equipo R2D2
+        </h2>
+
         <p className="text-white/60 text-sm mb-6">
-          Tu aporte nos permite costear inscripciones, materiales y traslados para competir
-          a nivel Nacional e Internacional. Cada contribución hace la diferencia para el equipo.
+          Tu aporte nos permite costear inscripciones, materiales y traslados
+          para competir a nivel Nacional e Internacional. Cada contribución hace
+          la diferencia para el equipo.
         </p>
 
-        <div className="flex flex-col gap-3">
-          {bankData.map((item) => (
-            <div
-              key={item.label}
-              className="flex items-center justify-between bg-white/5 border border-white/10 rounded-xl px-4 py-3"
-            >
-              <div>
-                <p className="text-white/40 text-[10px] uppercase tracking-widest font-bold">
-                  {item.label}
-                </p>
-                <p className="text-white font-semibold text-sm mt-0.5">{item.value}</p>
-              </div>
-              <button
-                onClick={() => handleCopy(item.value, item.label)}
-                className="text-white/40 hover:text-accent transition-colors ml-4 shrink-0"
-                title="Copiar"
-              >
-                {copied === item.label ? (
-                  <Check size={16} className="text-accent" />
-                ) : (
-                  <Copy size={16} />
-                )}
-              </button>
-            </div>
-          ))}
+        <div className="bg-white/5 border border-white/10 rounded-xl p-4">
+          <pre className="text-white text-sm whitespace-pre-wrap font-sans">
+            {bankData}
+          </pre>
         </div>
+
+        <button
+          onClick={() => handleCopy(bankData, "datos")}
+          className="w-full mt-4 flex items-center justify-center gap-2 bg-accent text-primary hover:bg-accent/90 rounded-xl py-3 font-semibold transition-colors"
+        >
+          {copied === "datos" ? (
+            <>
+              <Check size={16} />
+              Copiado
+            </>
+          ) : (
+            <>
+              <Copy size={16} />
+              Copiar datos bancarios
+            </>
+          )}
+        </button>
 
         <p className="text-white/30 text-xs text-center mt-6">
           ¿Dudas? Escríbenos a{" "}
-          <a href="mailto:r2d2.eiv.2022@gmail.com" className="text-accent hover:underline">
+          <a
+            href="mailto:r2d2.eiv.2022@gmail.com"
+            className="text-accent hover:underline"
+          >
             r2d2.eiv.2022@gmail.com
           </a>
         </p>
@@ -102,7 +103,6 @@ function DonateModal({ onClose }: { onClose: () => void }) {
     </Modal>
   );
 }
-
 // ─── Modal Redes Sociales ─────────────────────────────────────────────────────
 function SocialModal({ onClose }: { onClose: () => void }) {
   const socials = [
