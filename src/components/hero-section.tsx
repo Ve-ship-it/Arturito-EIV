@@ -41,7 +41,7 @@ function Modal({ onClose, children }: { onClose: () => void; children: React.Rea
 function DonateModal({ onClose }: { onClose: () => void }) {
   const [copied, setCopied] = useState<string | null>(null);
 
-  const bankData = `Nombre: CARLA EDITH OPAZO OLIVIA
+  const bankData = `Nombre: CARLA EDITH OPAZO OLIVA
 RUT: 13654234-6
 Banco prepago Tenpo
 Tipo de cuenta: Cuenta Vista
