@@ -42,12 +42,12 @@ function DonateModal({ onClose }: { onClose: () => void }) {
   const [copied, setCopied] = useState<string | null>(null);
 
   const bankData = [
-    { label: "Banco", value: "Banco Estado" },
-    { label: "Tipo de cuenta", value: "Cuenta Corriente" },
-    { label: "Número de cuenta", value: "123456789" },
-    { label: "Nombre titular", value: "Juan Pérez González" },
-    { label: "RUT titular", value: "12.345.678-9" },
-    { label: "Correo", value: "r2d2.eiv.2022@gmail.com" },
+    { label: "Banco", value: "Prepago Tempo" },
+    { label: "Tipo de cuenta", value: "Cuenta Vista" },
+    { label: "Número de cuenta", value: "111113654234" },
+    { label: "Nombre titular", value: "Carla Edith Opazo Olivia" },
+    { label: "RUT titular", value: "13654234-6" },
+    { label: "Correo", value: "carla_opazoolivia@yahoo.es" },
   ];
 
   function handleCopy(value: string, label: string) {
@@ -69,7 +69,7 @@ function DonateModal({ onClose }: { onClose: () => void }) {
         <h2 className="text-white text-2xl font-bold mb-2">Apoya al Equipo R2D2</h2>
         <p className="text-white/60 text-sm mb-6">
           Tu aporte nos permite costear inscripciones, materiales y traslados para competir
-          a nivel nacional. Cada contribución hace la diferencia para el equipo.
+          a nivel Nacional e Internacional. Cada contribución hace la diferencia para el equipo.
         </p>
 
         <div className="flex flex-col gap-3">
@@ -203,9 +203,8 @@ export function HeroSection() {
               Apoya al Equipo
             </Button>
             <Button
-              variant="outline"
               size="lg"
-              className="border-white text-white hover:bg-white/10 px-8 py-6 text-lg"
+              className="bg-accent text-primary hover:bg-accent/90 px-8 py-6 text-lg font-bold"
               onClick={() => setModal("social")}
             >
               Sigue nuestros pasos
