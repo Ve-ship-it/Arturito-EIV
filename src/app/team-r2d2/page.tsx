@@ -17,72 +17,72 @@ const teamImg = PlaceHolderImages.find(img => img.id === 'team-history');
 // 2. Definimos la estructura y los datos de los 15 competidores
 const COMPETITORS = [
   {
-    name: 'Gabriel Ignacio Córdova Pasten',
+    name: 'Gabriel Córdova',
     role: 'Competidor',
     desc: 'Encargado de investigación y exposición de proyecto innovador.'
   },
   {
-    name: 'Bernardita María Tapia Luna',
+    name: 'Bernardita Tapia',
     role: 'Competidor',
     desc: 'Encargada de investigación y exposición de proyecto innovador.'
   },
   {
-    name: 'Christofer Rafael Guzmán Tapia',
+    name: 'Christofer Guzmán',
     role: 'Competidor',
     desc: 'Lanzador y constructor de robot.'
   },
   {
-    name: 'Matías Alonzo Letelier Turedo',
+    name: 'Matías Letelier',
     role: 'Estudiante',
     desc: 'Constructor y modelador 3D de estructuras. Aporta su conocimiento y experiencia al equipo.'
   },
   {
-    name: 'Maikol Enrique Salaverria Salas',
+    name: 'Maikol Salaverria',
     role: 'Competidor',
     desc: 'Constructor, programador y lanzador de robot.'
   },
   {
-    name: 'Joaquín Humberto Torres Torres',
+    name: 'Joaquín Torres',
     role: 'Competidor',
     desc: 'Comunicador, presentador de cultura y redactor de guiones.'
   },
   {
-    name: 'Javier Ignacio Bustos Bustos',
+    name: 'Javier Bustos',
     role: 'Competidor',
     desc: 'Lanzador y constructor de robot.'
   },
   {
-    name: 'Martín Esteban Arancibia Bernal',
+    name: 'Martín Arancibia',
     role: 'Competidor',
     desc: 'Lanzador y constructor de robot.'
   },
   {
-    name: 'Jesús Alfredo Galeas Vidal',
+    name: 'Jesús Galeas',
     role: 'Mentor',
     desc: 'Investigador, diseñador y creador de prototipos electrónicos para proyectos científicos.'
   },
   {
-    name: 'Constanza Daniela Ortiz Jeria',
+    name: 'Constanza Ortiz',
     role: 'Mentor',
     desc: 'Traductora, diseñadora creativa y encargada de presentaciones del equipo.'
   },
   {
-    name: 'Fernando Nicolás Aguilera Contreras',
+    name: 'Fernando Aguilera',
     role: 'Mentor',
     desc: 'Encargado de redes sociales, traductor y realizador audiovisual del equipo.'
   },
   {
-    name: 'Alan Marcelo Vega Castro',
+    name: 'Alan Vega',
     role: 'Mentor',
     desc: 'Responsable de la planificación y estrategia del robot.'
   },
   {
-    name: 'Carla Edith Opazo Oliva',
+    name: 'Carla Opazo',
     role: 'Coach',
     desc: 'Gestora de logística y planificadora del equipo.'
   },
   {
-    name: 'Christian Leonardo Aguilera Rivera',
+    name: 'Christian Aguilera',
     role: 'Coach',
     desc: 'Coordinador de actividades y organización del equipo.'
   },
