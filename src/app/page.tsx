@@ -290,15 +290,26 @@ export default function Home() {
                 Las organizaciones que hacen posible nuestro éxito.
               </p>
             </div>
+
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 opacity-70">
               {[1, 2, 3, 4, 5, 6].map((i) => (
                 <div
                   key={i}
-                  className="flex items-center justify-center bg-white p-6 rounded-xl shadow-sm hover:opacity-100 transition-opacity"
+                  className="flex items-center justify-center bg-white p-6 rounded-xl shadow-sm hover:opacity-100 transition-opacity min-h-[120px]"
                 >
-                  <div className="text-primary font-bold flex items-center gap-2">
-                    <Star className="text-accent w-4 h-4" /> PARTNER {i}
-                  </div>
+                  {i === 1 ? (
+                    <Image
+                      src="/images/logo_gob_reg_val.png"
+                      alt="Gobierno Regional de Valparaíso"
+                      width={140}
+                      height={80}
+                      className="object-contain"
+                    />
+                  ) : (
+                    <div className="text-muted-foreground font-semibold">
+                      Próximamente
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
