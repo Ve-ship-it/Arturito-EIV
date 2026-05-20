@@ -43,9 +43,9 @@ export const videoData: VideoItem[] = [
   },
   {
     id: "yh4QJZ0ApgY",
-    title: "Guía Práctica: Conexión de Sensores en Robótica",
-    description: "Todo lo que necesitas saber para conectar sensores en tus proyectos robóticos.",
-    category: "Tutorial",
+    title: "Herramientas para fortalecer habilidades en construcción y programación sin tener un equipo a mano.",
+    description: "Todo lo que necesitas saber para ganar una competencia sin un robot físico.",
+    category: "Vlog",
     uploadedAt: "2026-04-26",
   },
   {
