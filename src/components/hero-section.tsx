@@ -181,7 +181,7 @@ export function HeroSection() {
 
       <section className="relative h-screen min-h-[600px] flex items-center justify-center text-white">
         <Image
-          src="/images/hero-robot.png"
+          src="/images/hero-robot.jpg"
           alt="R2D2 Hero"
           fill
           className="object-cover brightness-[0.3]"
