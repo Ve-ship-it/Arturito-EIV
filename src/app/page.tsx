@@ -200,7 +200,7 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/team-1.JPG"
+                  src="/images/team-2.JPG"
                   alt="Equipo R2D2"
                   fill
                   className="object-cover"

@@ -115,7 +115,7 @@ export default function TeamPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/images/team-1.JPG"
+                src="/images/team-2.JPG"
                 alt="Equipo R2D2"
                 fill
                 className="object-cover"
@@ -206,7 +206,7 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* Official Guides Section */}
+{/*
       <section id="guias" className="py-24 bg-background">
         <div className="container mx-auto px-4 max-w-[1200px]">
           <div className="flex items-center justify-between mb-12">
@@ -230,6 +230,7 @@ export default function TeamPage() {
                 <ArrowRight />
               </Button>
             </div>
+
             <div className="flex items-center justify-between p-6 bg-white border-2 border-border rounded-xl hover:border-accent transition-colors group">
               <div className="flex items-center gap-4">
                 <div className="p-3 bg-primary/10 rounded-lg text-primary">
@@ -247,6 +248,7 @@ export default function TeamPage() {
           </div>
         </div>
       </section>
+*/}
 
       {/* Historical Archive */}
       <section id="archivo" className="py-24 bg-muted">
