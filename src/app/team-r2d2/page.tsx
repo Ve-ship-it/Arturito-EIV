@@ -3,7 +3,7 @@ import { Users, Target, Shield, History, Download, ArrowRight, ExternalLink } fr
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { PublicationsSection } from "@components/publications-section";
+import { PublicationsSection } from "@/components/publications-section";
 // 1. Importamos los componentes del Carrusel de Shadcn
 import {
   Carousel,
