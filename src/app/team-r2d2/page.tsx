@@ -129,7 +129,7 @@ export default function TeamPage() {
               <h2 className="text-4xl font-bold text-primary mb-6">¿Qué es el R2D2?</h2>
               <div className="space-y-6 text-muted-foreground leading-relaxed">
                 <p>
-                  El Equipo de Robótica R2D2 nació en 2008 con la premisa de que la ingeniería no solo se estudia, se vive. Somos una organización multidisciplinaria compuesta por más de 50 estudiantes apasionados por la innovación.
+                  El Equipo de Robótica R2D2 nació en 2008 con la premisa de que la ingeniería no solo se estudia, se vive. Somos una organización multidisciplinaria compuesta por estudiantes de la Escuela Industrial Superior de Valparaíso apasionados por la innovación.
                 </p>
                 <p>
                   Nuestra misión es representar a nuestra institución en las competencias más exigentes del mundo, desarrollando tecnología propia y fomentando un entorno de colaboración radical donde el error es bienvenido como fuente de aprendizaje.
