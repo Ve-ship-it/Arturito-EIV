@@ -61,11 +61,15 @@ export default function Home() {
 
   const topNews = (newsData || []).slice(0, 3);
 
+  const sorted = [...(videoData || [])].sort(
+    (a, b) => new Date(b.uploadedAt).getTime() - new Date(a.uploadedAt).getTime()
+  );
+
   const featuredVideo =
-    (videoData || []).find((v) => v.category === "Vlog") ||
-    (videoData || []).find((v) => v.category === "Competencia") ||
-    (videoData || []).find((v) => v.category === "Entrevistas") ||
-    (videoData || [])[videoData.length - 1];
+    sorted.find((v) => ["Vlog", "Entrevistas", "Competencia"].includes(v.category)) ||
+    sorted.find((v) => v.category === "Tutorial") ||
+    sorted.find((v) => v.category === "Laboratorio") ||
+    sorted[0];
 
   return (
     <>
