@@ -3,6 +3,7 @@ import { Users, Target, Shield, History, Download, ArrowRight, ExternalLink } fr
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { PublicationsSection } from "@components/publications-section";
 // 1. Importamos los componentes del Carrusel de Shadcn
 import {
   Carousel,
@@ -206,49 +207,7 @@ export default function TeamPage() {
         </div>
       </section>
 
-{/*
-      <section id="guias" className="py-24 bg-background">
-        <div className="container mx-auto px-4 max-w-[1200px]">
-          <div className="flex items-center justify-between mb-12">
-            <div>
-              <h2 className="text-3xl font-bold text-primary mb-2">Guías Oficiales</h2>
-              <p className="text-muted-foreground">Recursos esenciales para las siguientes competencias.</p>
-            </div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="flex items-center justify-between p-6 bg-white border-2 border-border rounded-xl hover:border-accent transition-colors group">
-              <div className="flex items-center gap-4">
-                <div className="p-3 bg-primary/10 rounded-lg text-primary">
-                  <Download />
-                </div>
-                <div>
-                  <h4 className="font-bold text-primary">Reglamento VEX 2024/25</h4>
-                  <p className="text-xs text-muted-foreground">PDF - 4.5MB</p>
-                </div>
-              </div>
-              <Button size="icon" variant="ghost" className="text-primary group-hover:text-accent">
-                <ArrowRight />
-              </Button>
-            </div>
-
-            <div className="flex items-center justify-between p-6 bg-white border-2 border-border rounded-xl hover:border-accent transition-colors group">
-              <div className="flex items-center gap-4">
-                <div className="p-3 bg-primary/10 rounded-lg text-primary">
-                  <Download />
-                </div>
-                <div>
-                  <h4 className="font-bold text-primary">Estándares de Seguridad en Taller</h4>
-                  <p className="text-xs text-muted-foreground">PDF - 1.2MB</p>
-                </div>
-              </div>
-              <Button size="icon" variant="ghost" className="text-primary group-hover:text-accent">
-                <ArrowRight />
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-*/}
+      <PublicationsSection />
 
       {/* Historical Archive */}
       <section id="archivo" className="py-24 bg-muted">

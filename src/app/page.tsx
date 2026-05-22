@@ -11,6 +11,7 @@ import { newsData } from "@/app/lib/news";
 import { videoData, getYoutubeEmbedUrl, getTimeAgo, type VideoItem } from "@/app/lib/videos";
 import { HeroSection } from "@/components/hero-section";
 
+
 // ─── Video Modal ──────────────────────────────────────────────────────────────
 function VideoModal({ video, onClose }: { video: VideoItem; onClose: () => void }) {
   return (
@@ -204,7 +205,7 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/team-2.JPG"
+                  src="/images/trabajando.jpg"
                   alt="Equipo R2D2"
                   fill
                   className="object-cover"
@@ -228,8 +229,8 @@ export default function Home() {
                     <p className="text-xs text-white/50">Nuestros representantes.</p>
                   </Link>
                   <Link href="/team-r2d2#guias" className="group p-4 bg-white/5 rounded-lg hover:bg-accent/10 transition-colors border border-white/10">
-                    <h4 className="font-bold text-accent mb-1">Guías Oficiales</h4>
-                    <p className="text-xs text-white/50">Reglamentos y recursos.</p>
+                    <h4 className="font-bold text-accent mb-1">Artículos y Publicaciones</h4>
+                    <p className="text-xs text-white/50">Crónica y reconocimientos a nuestra historia.</p>
                   </Link>
                   <Link href="/team-r2d2#archivo" className="group p-4 bg-white/5 rounded-lg hover:bg-accent/10 transition-colors border border-white/10">
                     <h4 className="font-bold text-accent mb-1">Archivo Histórico</h4>
