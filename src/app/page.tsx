@@ -237,7 +237,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Education Preview */}
+{/*Education Preview
+        
         <section className="py-24 bg-white">
           <div className="container mx-auto px-4 max-w-[1200px]">
             <div className="flex flex-col items-center text-center mb-16">
@@ -283,6 +284,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+*/}
 
         {/* Partners & Sponsors Section */}
         <section id="socios-sponsors" className="py-24 bg-muted border-y border-border">
