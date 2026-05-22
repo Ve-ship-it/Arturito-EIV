@@ -2,33 +2,28 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import {
-  History,
-  X,
-  ChevronLeft,
-  ChevronRight,
-} from "lucide-react";
+import { History, X, ChevronLeft, ChevronRight } from "lucide-react";
 
 const generations = [
   {
     year: 2018,
     cover: "/images/2018.jpeg",
-    galleryCount: 0,
+    count: 13,
   },
   {
     year: 2023,
     cover: "/images/2023.jpeg",
-    galleryCount: 0,
+    count: 5,
   },
   {
     year: 2024,
     cover: "/images/2024.jpeg",
-    galleryCount: 0,
+    count: 8,
   },
   {
     year: 2025,
     cover: "/images/2025.JPG",
-    galleryCount: 0,
+    count: 9,
   },
 ];
 
@@ -39,10 +34,14 @@ function ArchiveModal({
   generation: (typeof generations)[0];
   onClose: () => void;
 }) {
-  const images = Array.from(
-    { length: 5 },
-    () => generation.cover
-  );
+  const images = [
+    generation.cover,
+    ...Array.from(
+      { length: generation.count },
+      (_, i) =>
+        `/images/archive/${generation.year}/${generation.year}-${String(i + 1).padStart(2, "0")}.jpg`
+    ),
+  ];
 
   const [current, setCurrent] = useState(0);
 
@@ -65,7 +64,7 @@ function ArchiveModal({
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-20 bg-black/50 hover:bg-accent text-white hover:text-primary rounded-full p-2 transition-colors"
+          className="absolute top-4 right-4 z-20 bg-black/50 hover:bg-accent text-white hover:text-primary rounded-full p-2"
         >
           <X size={20} />
         </button>
@@ -82,14 +81,14 @@ function ArchiveModal({
             <>
               <button
                 onClick={previousImage}
-                className="absolute left-4 bg-black/60 hover:bg-accent text-white hover:text-primary p-3 rounded-full transition-colors z-10"
+                className="absolute left-4 bg-black/60 hover:bg-accent text-white hover:text-primary p-3 rounded-full"
               >
                 <ChevronLeft size={28} />
               </button>
 
               <button
                 onClick={nextImage}
-                className="absolute right-4 bg-black/60 hover:bg-accent text-white hover:text-primary p-3 rounded-full transition-colors z-10"
+                className="absolute right-4 bg-black/60 hover:bg-accent text-white hover:text-primary p-3 rounded-full"
               >
                 <ChevronRight size={28} />
               </button>
@@ -152,9 +151,8 @@ export function HistoricalArchive() {
                   <h4 className="text-2xl font-bold">
                     Generación {generation.year}
                   </h4>
-
                   <p className="text-accent text-sm font-medium">
-                    Ver galería
+                    {generation.count + 1} imágenes
                   </p>
                 </div>
               </div>
