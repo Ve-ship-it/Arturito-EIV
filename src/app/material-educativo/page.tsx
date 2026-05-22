@@ -32,39 +32,22 @@ interface Course {
 const courses: Course[] = [
   {
     id: 1,
-    title: "Fundamentos de Programación Arduino",
-    description: "Domina el lenguaje C++ para controladores AVR y construye tus primeros algoritmos de control.",
-    category: "Programación",
-    preview: "/docs/previews/arduino-fundamentos.jpg",
-    pdf: "/docs/arduino-fundamentos.pdf",
+    title: "Clase 1 — Taller R2D2",
+    description: "Material de la primera clase del taller ACLE de Robótica R2D2 EIV.",
+    category: "Clases",
+    preview: "/docs/previews/2026-04-11_Clase 1.jpg",
+    pdf: "/docs/2026-04-11_Clase 1.pdf",
   },
   {
     id: 2,
-    title: "Diseño Mecánico CAD con Fusion 360",
-    description: "Aprende a modelar piezas en 3D para impresión y mecanizado CNC con precisión milimétrica.",
-    category: "Mecánica",
-    preview: "/docs/previews/cad-fusion360.jpg",
-    pdf: "/docs/cad-fusion360.pdf",
-  },
-  {
-    id: 3,
-    title: "Electrónica de Potencia para Motores",
-    description: "Entiende cómo funcionan los drivers H-Bridge y la gestión de energía en robots de alta velocidad.",
-    category: "Electrónica",
-    preview: "/docs/previews/electronica-motores.jpg",
-    pdf: "/docs/electronica-motores.pdf",
-  },
-  {
-    id: 4,
-    title: "Visión Artificial Básica",
-    description: "Introducción al procesamiento de imágenes con OpenCV para el seguimiento de líneas y objetos.",
-    category: "IA",
-    preview: "/docs/previews/vision-artificial.jpg",
-    pdf: "/docs/vision-artificial.pdf",
+    title: "Clase 2 — Taller R2D2",
+    description: "Material de la segunda clase del taller ACLE de Robótica R2D2 EIV.",
+    category: "Clases",
+    preview: "/docs/previews/2026-04-18_Clase 2.jpg",
+    pdf: "/docs/2026-04-18_Clase 2.pdf",
   },
 ];
-
-const categories = ["Todos", "Programación", "Mecánica", "Electrónica", "IA"];
+const categories = ["Todos", "Clases", "Programación", "Construcción", "Simulación"];
 
 // ─── Modal PDF ────────────────────────────────────────────────────────────────
 function PDFModal({ course, onClose }: { course: Course; onClose: () => void }) {
