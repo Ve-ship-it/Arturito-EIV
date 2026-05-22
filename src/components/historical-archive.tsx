@@ -27,7 +27,7 @@ const generations = [
   },
   {
     year: 2025,
-    cover: "/images/2025.jpeg",
+    cover: "/images/2025.JPG",
     galleryCount: 0,
   },
 ];
