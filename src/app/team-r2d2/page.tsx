@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { PublicationsSection } from "@/components/publications-section";
+import { HistoricalArchive } from "@/components/historical-archive";
 // 1. Importamos los componentes del Carrusel de Shadcn
 import {
   Carousel,
@@ -126,7 +127,7 @@ export default function TeamPage() {
               <div className="inline-flex items-center gap-2 bg-accent/10 text-primary px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4">
                 <Target size={14} /> Misión y Visión
               </div>
-              <h2 className="text-4xl font-bold text-primary mb-6">¿Qué es el R2D2?</h2>
+              <h2 className="text-4xl font-bold text-primary mb-6">¿Qué es R2D2?</h2>
               <div className="space-y-6 text-muted-foreground leading-relaxed">
                 <p>
                   El Equipo de Robótica R2D2 nació en 2008 con la premisa de que la ingeniería no solo se estudia, se vive. Somos una organización multidisciplinaria compuesta por estudiantes de la Escuela Industrial Superior de Valparaíso apasionados por la innovación.
@@ -210,30 +211,8 @@ export default function TeamPage() {
       <PublicationsSection />
 
       {/* Historical Archive */}
-      <section id="archivo" className="py-24 bg-muted">
-        <div className="container mx-auto px-4 max-w-[1200px]">
-          <div className="flex flex-col items-center text-center mb-16">
-            <h2 className="text-3xl font-bold text-primary mb-4 flex items-center gap-3">
-              <History className="text-primary" /> Archivo Histórico
-            </h2>
-            <p className="text-muted-foreground max-w-2xl">
-              Recordando a las generaciones y delegaciones anteriores que pavimentaron el camino.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[2023, 2022, 2021, 2020].map((year) => (
-              <div key={year} className="relative aspect-[3/4] rounded-xl overflow-hidden group cursor-pointer shadow-lg">
-                <Image src={`https://picsum.photos/seed/team-${year}/600/800`} alt={`Team ${year}`} fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary to-transparent opacity-80"></div>
-                <div className="absolute bottom-6 left-6 text-white">
-                  <h4 className="text-2xl font-bold">Generación {year}</h4>
-                  <p className="text-accent text-sm font-medium">12 Delegaciones</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <HistoricalArchive />
+
     </div>
   );
 }
