@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Users, Target, Shield, History, Download, ArrowRight, ExternalLink } from "lucide-react";
+import { Users, Target, Shield, History, Download, ArrowRight, ExternalLink, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
