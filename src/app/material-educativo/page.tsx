@@ -14,6 +14,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
+
 // ─── Datos de cursos ──────────────────────────────────────────────────────────
 // Para agregar un curso nuevo:
 // 1. Sube el PDF a /public/docs/nombre-archivo.pdf
