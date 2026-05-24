@@ -87,7 +87,7 @@ export const videoData: VideoItem[] = [
     id: "pAQn3F7ESZ0",
     title: "Seguimiento de Linea Regulado con un Único Sensor EV3/SPIKE",
     description: "Programa nivel medio de seguimiento de linea regulado por medio de un único sensor.",
-    category: "Laboratorio",
+    category: "Tutorial",
     uploadedAt: "2026-05-21",
   },
 ];

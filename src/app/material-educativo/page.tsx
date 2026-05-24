@@ -47,6 +47,14 @@ const courses: Course[] = [
     preview: "/docs/previews/2026-04-18_Clase 2.jpg",
     pdf: "/docs/2026-04-18_Clase 2.pdf",
   },
+  {
+    id: 3,
+    title: "Clase 3 — Taller R2D2",
+    description: "Material de la tercera clase del taller ACLE de Robótica R2D2 EIV.",
+    category: "Clases",
+    preview: "/docs/previews/2026-04-25_Clase 3.jpg",
+    pdf: "/docs/2026-04-25_Clase 3.pdf",
+  },
 ];
 const categories = ["Todos", "Clases", "Programación", "Construcción", "Simulación"];
 
