@@ -83,6 +83,13 @@ export const videoData: VideoItem[] = [
     category: "Laboratorio",
     uploadedAt: "2026-05-21",
   },
+  {
+    id: "pAQn3F7ESZ0",
+    title: "Seguimiento de Linea Regulado con un Único Sensor EV3/SPIKE",
+    description: "Programa nivel medio de seguimiento de linea regulado por medio de un único sensor.",
+    category: "Laboratorio",
+    uploadedAt: "2026-05-21",
+  },
 ];
 
 // Helpers
@@ -91,3 +98,4 @@ export const getYoutubeThumbnail = (id: string) =>
 
 export const getYoutubeEmbedUrl = (id: string) =>
   `https://www.youtube.com/embed/${id}?autoplay=1&rel=0&modestbranding=1`;
+
