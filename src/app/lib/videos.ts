@@ -38,7 +38,7 @@ export const videoData: VideoItem[] = [
     id: "yh4QJZ0ApgY",
     title: "Herramientas para fortalecer habilidades en construcción y programación sin tener un equipo a mano",
     description: "Todo lo que necesitas saber para ganar una competencia sin un robot físico.",
-    category: "Vlog",
+    category: "Tutorial",
     uploadedAt: "2026-04-26",
   },
   {
@@ -89,6 +89,13 @@ export const videoData: VideoItem[] = [
     description: "Programa nivel medio de seguimiento de linea regulado por medio de un único sensor.",
     category: "Tutorial",
     uploadedAt: "2026-05-21",
+  },
+  {
+    id: "4Ph6RvUToiY",
+    title: "Equipo de robótica busca fondos para ir a torneo en Corea del Sur | 24 Horas TVN Chile",
+    description: "Un equipo de robótica de un liceo de Valparaíso logró clasificar al torneo internacional First Lego League que se realizará en Corea del Sur. Sin embargo, a pesar de este gran logro, aún no cuentan con los recursos para costear los pasajes ni el alojamiento, y a menos de un mes del evento, esperan un milagro. Información para colaborar en Instagram: @r2d2_eiv ",
+    category: "Entrevistas",
+    uploadedAt: "2026-06-02",
   },
 ];
 
