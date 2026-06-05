@@ -15,8 +15,8 @@ export const newsData: NewsItem[] = [
     content:
       "El equipo de robótica R2D2 de la Escuela Industrial Superior de Valparaíso recibió la visita del Delegado Presidencial Regional, el Seremi de Educación y el Seremi de Ciencia, quienes conocieron de cerca el trabajo del taller y expresaron su orgullo por la clasificación del equipo al campeonato internacional. El equipo, bicampeón nacional de la FIRST LEGO League, viajará entre el 3 y 5 de julio a Jeonju-si, Corea del Sur, para representar a Chile ante delegaciones de todo el mundo. Fundado en 2008, el taller funciona cada sábado promoviendo competencias STEAM entre sus estudiantes.",
     date: "05 Jun 2026",
-    category: "Competencia",
-    image: "https://www.eiv.cl/wp-content/uploads/2026/03/Foto-Visita-Gobernador-3-4-2026.webp",
+    category: "Visita de autoridades",
+    image: "https://dprvalparaiso.dpr.gob.cl/media/2026/06/Robotica-01-894x596.jpeg",
     url: "https://dprvalparaiso.dpr.gob.cl/2026/06/05/equipo-de-robotica-de-la-escuela-industrial-superior-de-valparaiso-representara-a-chile-en-competencia-internacional-en-corea/",
   },
   {
@@ -25,7 +25,7 @@ export const newsData: NewsItem[] = [
     content:
       "El lunes 16 de marzo, en nuestra Escuela Industrial de Valparaíso recibimos la visita del Gobernador de la Región de Valparaíso, Rodrigo Mundaca, quien recorrió el establecimiento para conocer de cerca la historia y el trabajo desarrollado por el ACLE de robótica R2D2 EIV. Durante la jornada, los estudiantes presentaron su trayectoria, logros y el innovador proyecto en el que actualmente se encuentran trabajando, dando cuenta del talento, compromiso y visión que los ha llevado a convertirse en bicampeones nacionales de la FIRST LEGO League en sus ediciones 2024 y 2025. Asimismo, compartieron su experiencia representando a la escuela y al país en la competencia internacional realizada el año pasado en Houston, Estados Unidos. Actualmente, el equipo se prepara para nuevos desafíos internacionales y proyecta su participación en la próxima instancia que se desarrollará en Corea del Sur.",
     date: "18 Mar 2026",
-    category: "Competencia",
+    category: "Visita de autoridades",
     image: "https://www.eiv.cl/wp-content/uploads/2026/03/Foto-Visita-Gobernador-3-4-2026.webp",
     url: "https://www.eiv.cl/gobernador-de-valparaiso-visita-al-equipo-de-robotica-r2d2-eiv/",
   },
